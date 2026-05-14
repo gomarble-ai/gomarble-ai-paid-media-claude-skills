@@ -32,7 +32,7 @@ https://www.gomarble.ai/mcp-thankyou
 
    https://apps.gomarble.ai
 
-8. Log in with your Google account or email ID.
+8. Log in with your work email ID.
 
 9. Add your ad accounts and integrations here:
 
