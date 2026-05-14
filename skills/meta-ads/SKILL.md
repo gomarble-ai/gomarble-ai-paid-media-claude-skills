@@ -62,7 +62,7 @@ Output one short paragraph before applying the skill. Example:
 
 Use to plan which signals you can get from which source before running any skill.
 
-| Signal | MCP (GoMarble / Meta / Pipeboard / etc.) | CSV (Ads Manager export) | Screenshot |
+| Signal | MCP (GoMarble / Meta / etc.) | CSV (Ads Manager export) | Screenshot |
 |---|---|---|---|
 | Spend, impressions, clicks, CTR, CPM, reach, frequency | ✅ direct | ✅ default columns | ✅ if shown |
 | Purchase count (deduplicated) | ✅ via `actions` array — apply Purchase De-Duplication rule | ✅ "Purchases" column (Meta already deduplicates — **skip the dedup rule**) | ⚠️ if shown |
