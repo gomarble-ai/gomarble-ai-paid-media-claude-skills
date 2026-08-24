@@ -84,9 +84,30 @@ Use it for prompts like:
 
 ---
 
+### Winning Ads Engine
+
+A six-skill creative research and production workflow that moves from competitor intelligence and first-party creative diagnosis to ranked patterns and shoot-ready briefs.
+
+The pack includes:
+
+- `winning-ads-orchestrator` — routes the end-to-end workflow
+- `competitor-ad-intelligence` — researches live competitor ads through GoMarble MCP
+- `own-creative-diagnosis` — diagnoses the user's Meta ad creatives
+- `creative-psychology-hooks` — generates and grades hooks using a structured psychology framework
+- `winning-pattern-synthesis` — ranks cross-source patterns, test gaps, and market whitespace
+- `ad-brief-generator` — turns selected directions into production briefs
+
+Install all six components for the full workflow, or install an individual component for narrower tasks. Competitor intelligence requires a connected GoMarble MCP; own-creative diagnosis can instead use a sufficiently complete CSV or screenshots. The orchestrator expects the component skills to be installed and reports any missing data source.
+
+Use it for prompts like:
+
+> Find winning ad ideas for my brand, compare them with my top-performing creatives, and turn the strongest directions into briefs we can shoot.
+
+---
+
 ## Best with GoMarble MCP
 
-These skills can work with exported files, screenshots, or pasted data.
+Most analysis skills can work with exported files, screenshots, or pasted data. Competitor intelligence is the exception: it requires a connected GoMarble MCP because file-based inputs cannot supply live competitor ad data.
 
 They become more powerful when Claude is connected to GoMarble MCP, because Claude can access marketing data more directly instead of relying only on manual exports.
 
@@ -227,7 +248,19 @@ paid-media-claude-skills/
 └── skills/
     ├── meta-ads/
     │   └── SKILL.md
-    └── google-ads/
+    ├── google-ads/
+    │   └── SKILL.md
+    ├── winning-ads-orchestrator/
+    │   └── SKILL.md
+    ├── competitor-ad-intelligence/
+    │   └── SKILL.md
+    ├── own-creative-diagnosis/
+    │   └── SKILL.md
+    ├── creative-psychology-hooks/
+    │   └── SKILL.md
+    ├── winning-pattern-synthesis/
+    │   └── SKILL.md
+    └── ad-brief-generator/
         └── SKILL.md
 ```
 
