@@ -1,0 +1,17 @@
+{
+  "name": "gomarble-ai",
+  "owner": {
+    "name": "GoMarble",
+    "url": "https://www.gomarble.ai"
+  },
+  "metadata": {
+    "description": "GoMarble plugins for paid media teams."
+  },
+  "plugins": [
+    {
+      "name": "gomarble",
+      "source": "./",
+      "description": "Meta Ads and Google Ads audits at senior-media-buyer depth, connected to your ad accounts through GoMarble."
+    }
+  ]
+}

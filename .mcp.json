@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "gomarble": {
+      "type": "http",
+      "url": "https://apps.gomarble.ai/mcp-api/mcp"
+    }
+  }
+}

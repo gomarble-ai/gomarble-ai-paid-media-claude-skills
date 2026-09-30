@@ -4,9 +4,9 @@ Use GoMarble MCP to connect Claude with your marketing data.
 
 These paid media skills can work with uploaded files, screenshots, or pasted data. They work best when Claude is connected to GoMarble MCP, so Claude can query your marketing data directly.
 
-Official setup page:
+The easiest way to connect is to install the GoMarble plugin (see the [README](../README.md#install)). It adds the connector for you. Use the steps below only if you want to add the connector by hand.
 
-https://www.gomarble.ai/mcp-thankyou
+More about GoMarble MCP: https://www.gomarble.ai/mcp
 
 ## Setup steps
 
@@ -22,7 +22,9 @@ https://www.gomarble.ai/mcp-thankyou
 
 4. Use this integration URL:
 
-   https://apps.gomarble.ai/mcp-api/sse
+   https://apps.gomarble.ai/mcp-api/mcp
+
+   If you added GoMarble earlier with the older `https://apps.gomarble.ai/mcp-api/sse` address, it still works. Don't add a second connector if you already have one.
 
 5. Click Add.
 
@@ -52,10 +54,10 @@ Once connected, try asking Claude:
 
 ## Using GoMarble MCP with these skills
 
-After MCP is connected, install or upload the skills from this repo:
+After MCP is connected, install the GoMarble plugin, or upload the skill folders from this repo. Each folder holds a `SKILL.md` plus a `references/` folder with the detailed steps, so upload the whole folder, not just `SKILL.md`:
 
-- `skills/meta-ads/SKILL.md`
-- `skills/google-ads/SKILL.md`
+- `skills/meta-ads/`
+- `skills/google-ads/`
 
 Then ask Claude to run the relevant skill.
 
