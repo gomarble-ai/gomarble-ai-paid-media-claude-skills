@@ -18,11 +18,17 @@ If you share, publish, remix, or distribute these materials, you must give clear
 
 Suggested attribution:
 
-> Based on GoMarble Paid Media Claude Skills — https://github.com/gomarble-ai/paid-media-claude-skills
+> Based on GoMarble Paid Media Claude Skills — https://github.com/gomarble-ai/gomarble-ai-paid-media-claude-skills
 
 Attribution should be visible in the README, documentation, or another reasonable location where the adapted material is shared.
 
 Attribution is not required for private internal use or private client-service use where the materials are not redistributed.
+
+## The official GoMarble plugin
+
+GoMarble publishes these materials as the official GoMarble plugin for Claude, from this repository and through Anthropic's plugin directory. Installing and using that plugin is covered by the permissions above, including for client-service work.
+
+The restrictions below apply to anyone other than GoMarble who packages, embeds, or redistributes these materials, including inside their own plugin.
 
 ## You may not
 
