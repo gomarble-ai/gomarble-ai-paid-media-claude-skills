@@ -39,16 +39,22 @@ The license restricts turning these materials into, or embedding them inside, a 
 
 ## Skill format
 
-Each skill should live in its own folder:
+Each skill lives in its own folder, with a short `SKILL.md` and a `references/` folder:
 
-`skills/[skill-name]/SKILL.md`
+```text
+skills/[skill-name]/
+├── SKILL.md          # always loaded when the skill triggers
+└── references/       # loaded only when a request needs them
+```
 
 For this repo, the current folders are:
 
-- `skills/meta-ads/SKILL.md`
-- `skills/google-ads/SKILL.md`
+- `skills/meta-ads/`
+- `skills/google-ads/`
 
-Each `SKILL.md` should include:
+Keep `SKILL.md` under 3,000 words. It holds only what applies to every request: data sources, Step 0, the routing table, universal guardrails, and critical checks such as purchase de-duplication or micros conversion. Put each workflow (for example `references/pmax.md`) and each lookup table (for example `references/metrics.md`) in its own reference file. Link every reference file directly from the routing table in `SKILL.md`. Don't chain one reference file to another for anything essential.
+
+Across the skill folder, cover:
 
 - Name and description
 - When to use the skill
