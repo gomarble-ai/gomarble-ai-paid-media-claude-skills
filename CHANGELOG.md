@@ -4,7 +4,7 @@ All notable changes to the GoMarble plugin. Versions match `version` in `.claude
 
 ## 0.2.0
 
-- Plugin icon (`assets/icon.png`) and the GoMarble logo in the README
+- Plugin icon (`assets/icon.png`, 512×512) and the GoMarble logo in the README (`assets/logo.png`), both rendered from the brand master artwork
 - Directory listing links in `plugin.json`: documentation, support, privacy policy, terms of service
 - Skill names now match their folders: `meta-ads` and `google-ads`
 - Fixed a pointer in the Meta metrics reference to the Purchase De-Duplication rule, which now lives in `SKILL.md`
