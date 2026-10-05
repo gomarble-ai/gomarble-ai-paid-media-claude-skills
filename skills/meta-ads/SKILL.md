@@ -1,5 +1,5 @@
 ---
-name: meta-ads-auditor
+name: meta-ads
 description: Audits and optimizes Meta Ads (Facebook + Instagram) accounts at senior-media-buyer depth. Use when the user asks about Meta Ads performance, campaign optimization, creative fatigue, ad set analysis, video creative diagnosis, pixel tracking issues, or wants a Meta Ads audit. Covers EMQ Score health check, conversion metric mapping (ROAS vs CPL vs custom), campaign structure detection, ad set bid-limit and audience-split decision rules, ad-level performance analysis, and Hook Rate / Hold Rate video diagnostic scenarios. Read-and-recommend only — produces analysis the user applies manually in Meta Ads Manager.
 ---
 

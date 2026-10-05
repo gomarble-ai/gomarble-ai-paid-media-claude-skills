@@ -56,7 +56,7 @@ Keep `SKILL.md` under 3,000 words. It holds only what applies to every request: 
 
 Across the skill folder, cover:
 
-- Name and description
+- Name and description (the `name` in the front matter must match the skill's folder name, e.g. `meta-ads`)
 - When to use the skill
 - Required data
 - Workflow steps

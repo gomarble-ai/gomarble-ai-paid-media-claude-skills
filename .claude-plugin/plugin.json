@@ -9,6 +9,10 @@
   },
   "homepage": "https://www.gomarble.ai/mcp",
   "repository": "https://github.com/gomarble-ai/gomarble-ai-paid-media-claude-skills",
+  "documentationUrl": "https://github.com/gomarble-ai/gomarble-ai-paid-media-claude-skills#readme",
+  "supportUrl": "https://github.com/gomarble-ai/gomarble-ai-paid-media-claude-skills/issues",
+  "privacyPolicyUrl": "https://www.gomarble.ai/privacy",
+  "termsOfServiceUrl": "https://www.gomarble.ai/terms",
   "license": "LicenseRef-GoMarble",
   "keywords": [
     "meta-ads",

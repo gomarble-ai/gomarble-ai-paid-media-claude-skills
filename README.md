@@ -27,7 +27,7 @@ The skills also work without the connector. You can share CSV or Excel exports, 
 
 ### Claude Code
 
-```bash
+```text
 /plugin marketplace add gomarble-ai/gomarble-ai-paid-media-claude-skills
 /plugin install gomarble@gomarble-ai
 ```

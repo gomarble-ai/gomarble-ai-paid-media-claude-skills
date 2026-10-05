@@ -20,7 +20,7 @@ Meta API budget values are typically in **cents** (integer). $50 = 5000 cents. I
 | Video Plays | Initial impressions of the video |
 | 3-Second Views | "video_view" actions — hook engagement (this is inside the `actions` array, not a separate field) |
 | ThruPlays | 15-second or completed video watches |
-| Purchases | Use ONE purchase action type only — see Purchase De-Duplication below |
+| Purchases | Use ONE purchase action type only — see Purchase De-Duplication in SKILL.md |
 | Leads | Lead events |
 | Revenue | Conversion value for purchases |
 | Purchase ROAS | Returned directly by Meta |
