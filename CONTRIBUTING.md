@@ -113,6 +113,16 @@ Useful PR descriptions include:
 - What guardrail was added or clarified
 - Any example prompt used to test the change
 
+## Versioning
+
+The plugin version lives in `.claude-plugin/plugin.json`. Claude Code keeps people on the version they installed until that number changes, so every change that reaches `main` and touches the plugin needs a version bump:
+
+- **Patch** (`0.2.0` → `0.2.1`): wording fixes, typos, clarifications
+- **Minor** (`0.2.0` → `0.3.0`): new rules, reference files, assets, or manifest fields
+- **Major** (`0.x` → `1.0.0`): changes to how people install or invoke the plugin, such as renaming a skill
+
+Add an entry to `CHANGELOG.md` in the same pull request.
+
 ## Example contribution ideas
 
 Good first contributions:

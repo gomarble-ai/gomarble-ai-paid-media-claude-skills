@@ -1,3 +1,5 @@
+![GoMarble](assets/logo.png)
+
 # GoMarble for Claude
 
 Senior-media-buyer audits for Meta Ads and Google Ads, run by Claude on your live ad account data.
@@ -134,6 +136,7 @@ gomarble-ai-paid-media-claude-skills/
 │   ├── plugin.json        # plugin manifest
 │   └── marketplace.json   # lets Claude Code install from this repo
 ├── .mcp.json              # GoMarble connector
+├── assets/                # plugin icon and logo
 ├── skills/
 │   ├── meta-ads/
 │   │   ├── SKILL.md       # routing, guardrails, critical checks
@@ -143,6 +146,7 @@ gomarble-ai-paid-media-claude-skills/
 │       └── references/
 ├── docs/
 │   └── gomarble-mcp-setup.md
+├── CHANGELOG.md
 ├── CONTRIBUTING.md
 ├── LICENSE.md
 └── README.md

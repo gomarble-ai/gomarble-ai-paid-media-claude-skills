@@ -1,7 +1,7 @@
 {
   "name": "gomarble",
   "displayName": "GoMarble",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Senior-media-buyer audits for Meta Ads and Google Ads, connected to your live ad accounts through GoMarble. Find wasted spend, classify search terms, check PMax maturity, spot creative fatigue, and get a clear list of what to change next.",
   "author": {
     "name": "GoMarble",
@@ -9,6 +9,7 @@
   },
   "homepage": "https://www.gomarble.ai/mcp",
   "repository": "https://github.com/gomarble-ai/gomarble-ai-paid-media-claude-skills",
+  "icon": "./assets/icon.png",
   "documentationUrl": "https://github.com/gomarble-ai/gomarble-ai-paid-media-claude-skills#readme",
   "supportUrl": "https://github.com/gomarble-ai/gomarble-ai-paid-media-claude-skills/issues",
   "privacyPolicyUrl": "https://www.gomarble.ai/privacy",
