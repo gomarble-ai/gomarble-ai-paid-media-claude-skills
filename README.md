@@ -1,168 +1,66 @@
-# GoMarble Paid Media Claude Skills
+![GoMarble](assets/logo.png)
 
-Deep Claude Skills for paid media operators — Meta Ads audits, Google Ads audits, creative analysis, search term diagnosis, PMax reviews, Shopping audits, and performance recommendations.
+# GoMarble for Claude
 
-These skills help Claude reason like a senior media buyer.
+Senior-media-buyer audits for Meta Ads and Google Ads, run by Claude on your live ad account data.
 
-They work with:
-- connected MCP servers like GoMarble MCP
-- uploaded CSV / Excel exports
-- screenshots
-- pasted tables
+This plugin gives Claude two things:
 
-Use them when you want Claude to audit ad accounts, diagnose performance issues, find wasted spend, analyze creatives, and recommend what to do next.
+1. **Two paid media skills.** These are deep audit workflows for Meta Ads and Google Ads. They teach Claude what data to pull, how to read it, which guardrails to check, and how to lay out recommendations.
+2. **The GoMarble connector.** This lets Claude read your Meta Ads, Google Ads, Shopify, GA4 and other marketing data directly, so you don't have to export anything.
 
----
-
-## What is a skill?
-
-A skill is a markdown file (`SKILL.md`) that teaches Claude how to run a specific workflow.
-
-Each skill includes:
-- what data to look for
-- how to interpret performance
-- decision rules and guardrails
-- required checks before recommending action
-- structured output formats
-- examples of what to ask for when data is missing
-
-The skill teaches Claude how to think through paid media problems with more depth and consistency.
+Ask Claude to audit an account, find wasted spend, or diagnose creative fatigue. It will pull the data, run the checks a senior media buyer would, and tell you what to change next.
 
 ---
 
-## Skills included
+## What's inside
 
-### Meta Ads
+| Part | What it does |
+|---|---|
+| `meta-ads` skill | Meta Ads (Facebook + Instagram) audits. Covers the account health check, conversion metric mapping, campaign structure, ad set rules, the Pareto set of ads driving spend, creative fatigue, and Hook Rate / Hold Rate video diagnostics. |
+| `google-ads` skill | Google Ads audits. Covers Q1–Q5 search term classification, rank vs budget auction pressure, Shopping SKU classification, PMax maturity gates and asset labels, PMax vs Search ROAS, and keyword research checks. |
+| GoMarble connector | A remote MCP server at `https://apps.gomarble.ai/mcp-api/mcp`. You sign in with your GoMarble account (OAuth). It gives Claude read access to the ad accounts and data sources you've connected in GoMarble. |
 
-A senior-media-buyer workflow for auditing and optimizing Meta Ads accounts.
-
-Covers:
-- account health checks
-- conversion metric mapping
-- campaign structure analysis
-- ad set analysis
-- performance analysis
-- creative analysis
-- video hook / hold diagnostics
-- tracking and attribution caveats
-
-Folder:
-
-```bash
-skills/meta-ads/SKILL.md
-```
-
-Use it for prompts like:
-
-> Run a Meta Ads audit for the last 30 days. Identify what changed, what is wasting spend, which creatives are fatiguing, and what I should do next.
-
----
-
-### Google Ads
-
-A senior-media-buyer workflow for auditing and optimizing Google Ads accounts.
-
-Covers:
-- Search campaign optimization
-- Q1–Q5 search term classification
-- auction pressure diagnosis
-- Shopping SKU classification
-- Performance Max maturity checks
-- PMax asset performance labels
-- PMax vs Search comparison
-- keyword research validation
-
-Folder:
-
-```bash
-skills/google-ads/SKILL.md
-```
-
-Use it for prompts like:
-
-> Run a Google Ads audit across Search, Shopping, and PMax. Find wasted spend, classify search terms, review PMax maturity, and recommend what to do next.
-
----
-
-## Best with GoMarble MCP
-
-These skills can work with exported files, screenshots, or pasted data.
-
-They become more powerful when Claude is connected to GoMarble MCP, because Claude can access marketing data more directly instead of relying only on manual exports.
-
-GoMarble MCP helps Claude work with data from platforms like:
-- Meta Ads
-- Google Ads
-- Shopify
-- GA4
-- TikTok Ads
-- LinkedIn Ads
-- Klaviyo
-- Google Sheets
-- Bing Ads
-- Google Search Console
-
-Set up GoMarble MCP by following the instructions here:
-
-```text
-https://www.gomarble.ai/mcp-thankyou
-```
-
----
-
-## Want the full paid media operator?
-
-Claude Skills are a useful starting point. GoMarble is the full paid media operator.
-
-Use these free skills when you want to run one-off audits inside Claude.
-
-Use GoMarble AI when your team needs:
-- shared paid media context
-- account diagnostics & RCA
-- creative analysis
-- competitor research
-- recurring reports
-- multi-channel diagnosis
-- approval-based campaign actions
-- Agent Mode for launching and updating ads
-
-Try GoMarble AI:
-
-```text
-https://www.gomarble.ai?utm_source=github&utm_medium=repo&utm_campaign=paid_media_claude_skills
-```
+The skills also work without the connector. You can share CSV or Excel exports, screenshots, or pasted tables instead. Each skill tells Claude which checks still hold on each kind of data and asks for anything missing.
 
 ---
 
 ## Install
 
-### Clone this repo
+### Claude Code
 
-```bash
-git clone https://github.com/gomarble-ai/paid-media-claude-skills.git
+```text
+/plugin marketplace add gomarble-ai/gomarble-ai-paid-media-claude-skills
+/plugin install gomarble@gomarble-ai
 ```
 
-Then copy the skills you want into your Claude skills directory.
+### Claude and Claude Cowork
 
-Example:
+Install **GoMarble** from the plugin directory once it's listed. You can also upload the plugin from your organization's plugin settings.
 
-```bash
-cp -r paid-media-claude-skills/skills/meta-ads ~/.claude/skills/
-cp -r paid-media-claude-skills/skills/google-ads ~/.claude/skills/
-```
+---
 
-Or upload each `SKILL.md` file manually inside Claude.
+## Connect your ad accounts
+
+1. The first time Claude uses GoMarble, you'll be asked to sign in. In Claude Code, run `/mcp`, pick `plugin:gomarble:gomarble`, and choose **Authenticate**.
+2. Log in at [apps.gomarble.ai](https://apps.gomarble.ai) with your work email.
+3. Add your ad accounts and data sources at [apps.gomarble.ai/settings/integrations](https://apps.gomarble.ai/settings/integrations).
+4. Come back to Claude and ask for an audit.
+
+**Already added GoMarble as a custom connector?** If you set it up by hand earlier (for example at `https://apps.gomarble.ai/mcp-api/sse`), you'll see two GoMarble connectors after installing the plugin. Remove the old custom one in Claude's connector settings and keep the plugin's.
+
+Depending on what you connect, Claude can read data from Meta Ads, Google Ads, Shopify, GA4, TikTok Ads, LinkedIn Ads, Klaviyo, Bing Ads, Google Search Console and more.
 
 ---
 
 ## Usage
 
-Once installed, ask Claude to run the relevant workflow.
+Invoke a skill by name (`/gomarble:meta-ads`, `/gomarble:google-ads`) or just describe what you want.
 
-### Meta Ads examples
+### Meta Ads
 
 ```text
-Run a Meta Ads audit for the last 30 days and give me performance and creative recommendations.
+Run a Meta Ads audit for the last 30 days. Identify what changed, what is wasting spend, which creatives are fatiguing, and what I should do next.
 ```
 
 ```text
@@ -177,9 +75,7 @@ Find the Pareto set of ads driving 90% of spend. Classify each ad as keep, pause
 Analyze my Meta ad sets from the last 7 days. Tell me which are worth keeping, watching, or changing.
 ```
 
----
-
-### Google Ads examples
+### Google Ads
 
 ```text
 Run a Google Ads audit across Search, Shopping, and PMax. Start with data inventory, then identify the biggest optimization opportunities.
@@ -197,89 +93,87 @@ Audit my PMax campaigns. Check maturity, asset labels, search term insights, dev
 Classify my Shopping products into KILL, DOWNGRADE, PROMOTE, or MONITOR based on SKU-level spend, AOV, conversions, and ROAS.
 ```
 
+---
+
+## Read and recommend only
+
+The skills never change your ad accounts. Claude analyzes the data and recommends actions, and you apply them in Meta Ads Manager or Google Ads.
+
+The GoMarble connector also offers approval-based tools for making changes. The skills don't use them. For approval-based execution with a full team workflow, use [GoMarble AI](https://www.gomarble.ai?utm_source=github&utm_medium=repo&utm_campaign=claude_plugin).
 
 ---
 
-## Important note
+## Data and privacy
 
-These skills are read-and-recommend workflows.
+- **What the plugin runs locally:** nothing. It has no hooks, scripts, or local servers. It contains markdown skill files and one connector setting.
+- **What it connects to:** one remote MCP server, `https://apps.gomarble.ai/mcp-api/mcp`, over HTTPS. You sign in with OAuth. The plugin stores no credentials.
+- **What data moves:** when Claude calls a GoMarble tool, GoMarble reads from the ad platforms and data sources you connected in your GoMarble account and returns the results to Claude. Tool requests and their results pass through GoMarble's servers.
+- **Access control:** Claude can only reach accounts that your GoMarble login can reach. You can disconnect data sources in GoMarble, or disconnect the connector in Claude, at any time.
 
-They do not directly change your ad accounts.
+GoMarble's privacy policy: [gomarble.ai/privacy](https://www.gomarble.ai/privacy).
 
-Claude will analyze the data and recommend actions. You apply those recommendations manually in Meta Ads Manager or Google Ads.
+---
 
-For approval-based execution, use GoMarble AI.
+## Use the skills without the plugin
+
+To install only the skills:
+
+```bash
+git clone https://github.com/gomarble-ai/gomarble-ai-paid-media-claude-skills.git
+cp -r gomarble-ai-paid-media-claude-skills/skills/meta-ads ~/.claude/skills/
+cp -r gomarble-ai-paid-media-claude-skills/skills/google-ads ~/.claude/skills/
+```
+
+Or zip each skill folder, including its `references/` folder, and upload it in Claude's skill settings. Uploading `SKILL.md` alone leaves out the step-by-step detail the skill reads from `references/`. To add the connector by hand, follow [docs/gomarble-mcp-setup.md](docs/gomarble-mcp-setup.md).
 
 ---
 
 ## Repo layout
 
-```bash
-paid-media-claude-skills/
-├── README.md
-├── LICENSE
-├── CONTRIBUTING.md
+```text
+gomarble-ai-paid-media-claude-skills/
+├── .claude-plugin/
+│   ├── plugin.json        # plugin manifest
+│   └── marketplace.json   # lets Claude Code install from this repo
+├── .mcp.json              # GoMarble connector
+├── assets/                # plugin icon and logo
+├── skills/
+│   ├── meta-ads/
+│   │   ├── SKILL.md       # routing, guardrails, critical checks
+│   │   └── references/    # one file per workflow + metrics, data sources
+│   └── google-ads/
+│       ├── SKILL.md
+│       └── references/
 ├── docs/
 │   └── gomarble-mcp-setup.md
-├── examples/
-│   ├── meta-ads-example-prompts.md
-│   └── google-ads-example-prompts.md
-└── skills/
-    ├── meta-ads/
-    │   └── SKILL.md
-    └── google-ads/
-        └── SKILL.md
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── LICENSE.md
+└── README.md
 ```
 
 ---
 
 ## Who this is for
 
-These skills are built for:
-- media buyers
-- performance marketers
-- growth marketers
-- creative strategists
-- agency teams
-- founders who manage paid media
-- operators using Claude for marketing analysis
-
-They are not generic marketing prompts.
-
-They are deep operating workflows for paid media accounts.
+Media buyers, performance and growth marketers, creative strategists, agency teams, and founders who run their own paid media. These are deep operating workflows for paid media accounts, not generic marketing prompts.
 
 ---
 
 ## Contributing
 
-PRs are welcome.
-
-Good contributions include:
-- new audit frameworks
-- better guardrails
-- clearer output formats
-- missing-data handling
-- examples from real paid media workflows
-- improvements to Meta, Google, PMax, Shopping, or creative analysis logic
-
-Please keep contributions practical, specific, and grounded in how paid media operators actually work.
+PRs are welcome: better audit frameworks, stronger guardrails, clearer output formats, better missing-data handling, and real-world edge cases for Meta, Google, PMax, Shopping, or creative analysis. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
 ## License
 
-See `LICENSE`.
+Free to use with attribution. See [LICENSE.md](LICENSE.md).
 
 ---
 
 ## About GoMarble
 
-GoMarble is the AI agent for paid media teams.
+GoMarble is the AI agent for paid media teams. It connects your ads, analytics, and creatives, recommends what to do next, and can do it for you.
 
-It connects your ads, analytics, and creatives to recommend what to do next — and does it for you.
-
-Learn more:
-
-```text
-https://www.gomarble.ai?utm_source=github&utm_medium=repo&utm_campaign=paid_media_claude_skills
-```
+[gomarble.ai](https://www.gomarble.ai?utm_source=github&utm_medium=repo&utm_campaign=claude_plugin)

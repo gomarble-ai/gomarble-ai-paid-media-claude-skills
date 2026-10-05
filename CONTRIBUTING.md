@@ -39,18 +39,24 @@ The license restricts turning these materials into, or embedding them inside, a 
 
 ## Skill format
 
-Each skill should live in its own folder:
+Each skill lives in its own folder, with a short `SKILL.md` and a `references/` folder:
 
-`skills/[skill-name]/SKILL.md`
+```text
+skills/[skill-name]/
+├── SKILL.md          # always loaded when the skill triggers
+└── references/       # loaded only when a request needs them
+```
 
 For this repo, the current folders are:
 
-- `skills/meta-ads/SKILL.md`
-- `skills/google-ads/SKILL.md`
+- `skills/meta-ads/`
+- `skills/google-ads/`
 
-Each `SKILL.md` should include:
+Keep `SKILL.md` under 3,000 words. It holds only what applies to every request: data sources, Step 0, the routing table, universal guardrails, and critical checks such as purchase de-duplication or micros conversion. Put each workflow (for example `references/pmax.md`) and each lookup table (for example `references/metrics.md`) in its own reference file. Link every reference file directly from the routing table in `SKILL.md`. Don't chain one reference file to another for anything essential.
 
-- Name and description
+Across the skill folder, cover:
+
+- Name and description (the `name` in the front matter must match the skill's folder name, e.g. `meta-ads`)
 - When to use the skill
 - Required data
 - Workflow steps
@@ -106,6 +112,16 @@ Useful PR descriptions include:
 - What workflow or edge case improved
 - What guardrail was added or clarified
 - Any example prompt used to test the change
+
+## Versioning
+
+The plugin version lives in `.claude-plugin/plugin.json`. Claude Code keeps people on the version they installed until that number changes, so every change that reaches `main` and touches the plugin needs a version bump:
+
+- **Patch** (`0.2.0` → `0.2.1`): wording fixes, typos, clarifications
+- **Minor** (`0.2.0` → `0.3.0`): new rules, reference files, assets, or manifest fields
+- **Major** (`0.x` → `1.0.0`): changes to how people install or invoke the plugin, such as renaming a skill
+
+Add an entry to `CHANGELOG.md` in the same pull request.
 
 ## Example contribution ideas
 
