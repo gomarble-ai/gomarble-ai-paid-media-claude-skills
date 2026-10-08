@@ -105,7 +105,7 @@ GoMarble MCP helps Claude work with data from platforms like:
 Set up GoMarble MCP by following the instructions here:
 
 ```text
-https://www.gomarble.ai/mcp-thankyou
+https://www.gomarble.ai/mcp
 ```
 
 ---
